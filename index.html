@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolle</title>
+    <link rel="stylesheet" href="css/reset.css?v=3">
+    <link rel="stylesheet" href="css/estilos.css?v=3">
+</head>
+<body id="contenedorApp" class="tema-claro">
+    <header class="cabecera">
+        <h1 class="titulo">FIFA</h1>
+        <nav class="navegacion">
+            <a class="enlace-nav" href="index.html">Jugar</a>
+            <a class="enlace-nav" href="contacto.html">Contacto</a>
+            <button class="boton boton-tema" type="button">Modo oscuro</button>
+        </nav>
+    </header>
+    <main class="contenedor-principal">
+        <section class="panel-juego">
+            <div class="fila-info">
+                <span class="info-dato">Intentos restantes: <span class="contador-intentos">8</span></span>
+                <span class="info-dato">Tiempo: <span class="contador-tiempo">00:00</span></span>
+                <span class="info-dato">Dificultad: <span class="texto-dificultad">Fácil</span></span>
+                <span class="info-dato info-puntaje oculto">Puntaje: <span class="texto-puntaje">0</span></span>
+                <button class="boton boton-secundario boton-historial" type="button">Historial</button>
+                <button class="boton boton-secundario boton-reiniciar" type="button">Nueva partida</button>
+            </div>
+            <div class="panel-pista-extra oculto">
+                <img class="foto-pista oculto" src="" alt="Foto desenfocada del jugador secreto">
+                <div class="pistas-progresivas oculto"></div>
+            </div>
+            <div class="contenedor-busqueda">
+                <input class="input-busqueda" type="text" placeholder="Escribí el nombre de un jugador..." autocomplete="off">
+                <ul class="lista-autocompletado oculto"></ul>
+            </div>
+            <div class="cabecera-tablero">
+                <span class="columna-cabecera">Jugador</span>
+                <span class="columna-cabecera">Nacionalidad</span>
+                <span class="columna-cabecera">Club</span>
+                <span class="columna-cabecera">Posición</span>
+                <span class="columna-cabecera">Edad</span>
+                <span class="columna-cabecera">Overall</span>
+                <span class="columna-cabecera">Altura</span>
+            </div>
+            <div class="tablero-intentos"></div>
+        </section>
+    </main>
+    <footer class="pie-pagina">
+        <p class="texto-pie">Proyecto Final - Desarrollo y Arquitecturas Web 2026 - UAI</p>
+    </footer>
+    <div class="modal modal-inicio">
+        <div class="modal-contenido">
+            <p class="modal-texto">Ingresá tu nombre para comenzar a jugar</p>
+            <input class="input-nombre" type="text" placeholder="Tu nombre" autocomplete="off">
+            <p class="texto-error oculto error-nombre-jugador">El nombre debe tener al menos 3 letras.</p>
+            <p class="modal-texto">Elegí la dificultad</p>
+            <div class="fila-dificultad">
+                <label class="etiqueta-dificultad">
+                    <input class="radio-facil" type="radio" name="dificultad" value="facil" checked>
+                    Fácil
+                </label>
+                <label class="etiqueta-dificultad">
+                    <input class="radio-medio" type="radio" name="dificultad" value="medio">
+                    Medio
+                </label>
+                <label class="etiqueta-dificultad">
+                    <input class="radio-dificil" type="radio" name="dificultad" value="dificil">
+                    Difícil
+                </label>
+            </div>
+            <button class="boton boton-primario boton-comenzar" type="button">Comenzar</button>
+        </div>
+    </div>
+    <div class="modal modal-mensaje oculto">
+        <div class="modal-contenido">
+            <p class="modal-texto texto-modal-mensaje"></p>
+            <button class="boton boton-primario boton-cerrar-modal" type="button">Cerrar</button>
+        </div>
+    </div>
+    <div class="modal modal-historial oculto">
+        <div class="modal-contenido modal-contenido-ancho">
+            <p class="modal-texto">Historial de partidas</p>
+            <div class="fila-orden">
+                <button class="boton boton-secundario boton-ordenar-fecha" type="button">Ordenar por fecha</button>
+                <button class="boton boton-secundario boton-ordenar-intentos" type="button">Ordenar por intentos</button>
+            </div>
+            <div class="lista-historial"></div>
+            <button class="boton boton-primario boton-cerrar-historial" type="button">Cerrar</button>
+        </div>
+    </div>
+    <script src="js/api.js?v=3"></script>
+    <script src="js/core.js?v=3"></script>
+    <script src="js/ui.js?v=3"></script>
+    <script src="js/eventos.js?v=3"></script>
+    <script src="js/init.js?v=3"></script>
+</body>
+</html>
