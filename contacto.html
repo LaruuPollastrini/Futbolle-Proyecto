@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolle - Contacto</title>
+    <link rel="stylesheet" href="css/reset.css?v=3">
+    <link rel="stylesheet" href="css/estilos.css?v=3">
+</head>
+<body id="contenedorApp" class="tema-claro">
+    <header class="cabecera">
+        <h1 class="titulo">Futbolle</h1>
+        <nav class="navegacion">
+            <a class="enlace-nav" href="index.html">Jugar</a>
+            <a class="enlace-nav" href="contacto.html">Contacto</a>
+            <button class="boton boton-tema" type="button">Modo oscuro</button>
+        </nav>
+    </header>
+    <main class="contenedor-principal">
+        <section class="panel-contacto">
+            <h2 class="subtitulo">Contacto</h2>
+            <p class="texto-ayuda">Completá el formulario y se abrirá tu programa de correo predeterminado.</p>
+            <div class="campo-formulario">
+                <label class="etiqueta">
+                    Nombre
+                    <input class="input-formulario input-nombre-contacto" type="text" placeholder="Nombre y apellido" autocomplete="off">
+                </label>
+                <p class="texto-error oculto error-nombre-contacto">Ingresá un nombre alfanumérico válido.</p>
+            </div>
+            <div class="campo-formulario">
+                <label class="etiqueta">
+                    Email
+                    <input class="input-formulario input-mail-contacto" type="text" placeholder="tu@email.com" autocomplete="off">
+                </label>
+                <p class="texto-error oculto error-mail-contacto">Ingresá un email válido.</p>
+            </div>
+            <div class="campo-formulario">
+                <label class="etiqueta">
+                    Mensaje
+                    <textarea class="input-formulario area-mensaje input-mensaje-contacto" placeholder="Escribí tu mensaje..."></textarea>
+                </label>
+                <p class="texto-error oculto error-mensaje-contacto">El mensaje debe tener más de 5 caracteres.</p>
+            </div>
+            <button class="boton boton-primario boton-enviar-contacto" type="button">Enviar</button>
+        </section>
+    </main>
+    <footer class="pie-pagina">
+        <p class="texto-pie">Proyecto Final - Desarrollo y Arquitecturas Web 2026 - UAI</p>
+    </footer>
+    <div class="modal modal-mensaje oculto">
+        <div class="modal-contenido">
+            <p class="modal-texto texto-modal-mensaje"></p>
+            <button class="boton boton-primario boton-cerrar-modal" type="button">Cerrar</button>
+        </div>
+    </div>
+    <script src="js/ui.js?v=3"></script>
+    <script src="js/contacto.js?v=3"></script>
+</body>
+</html>
