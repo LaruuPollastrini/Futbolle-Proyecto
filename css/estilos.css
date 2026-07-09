@@ -33,11 +33,11 @@ textarea {
     justify-content: space-between;
     gap: 12px;
     padding: 16px 24px;
-    background-color: #1b5e20;
-    color: #ffffff;
+    background-color: #F5F5DC;
+    color: #1a1a1a;
 }
 .titulo {
-    color: #ffffff;
+    color: #1a1a1a;
 }
 .navegacion {
     display: flex;
@@ -51,7 +51,7 @@ textarea {
     font-weight: bold;
 }
 .enlace-nav:hover {
-    background-color: #2e7d32;
+    background-color: #E6E6C5;
 }
 
 .contenedor-principal {
@@ -265,8 +265,8 @@ textarea {
 }
 .pie-pagina {
     padding: 16px 24px;
-    background-color: #1b5e20;
-    color: #ffffff;
+    background-color: #F5F5DC;
+    color: #1a1a1a;
     text-align: center;
 }
 .boton {
@@ -275,11 +275,11 @@ textarea {
     font-weight: bold;
 }
 .boton-primario {
-    background-color: #1b5e20;
-    color: #ffffff;
+    background-color: #D2B48C;
+    color: #1a1a1a;
 }
 .boton-primario:hover {
-    background-color: #2e7d32;
+    background-color: #C19A6B;
 }
 .boton-secundario {
     background-color: #e0e0e0;
@@ -290,9 +290,12 @@ textarea {
 }
 .boton-tema {
     padding: 8px 12px;
-    border: 1px solid #ffffff;
+    border: 1px solid #1a1a1a;
     border-radius: 6px;
-    color: #ffffff;
+    color: #1a1a1a;
+}
+.boton-tema:hover {
+    background-color: #e6d3a8; 
 }
 .modal {
     position: fixed;
