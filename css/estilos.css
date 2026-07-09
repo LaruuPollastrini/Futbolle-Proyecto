@@ -429,6 +429,21 @@ textarea {
 .tema-oscuro .item-historial {
     background-color: #2a2a2a;
 }
+.boton-secundario {
+    padding: 8px 12px;
+    border: 1px solid #1a1a1a; 
+    border-radius: 6px;
+    color: #1a1a1a;          
+    font-weight: bold;
+    background-color: transparent; 
+    cursor: pointer;
+    text-decoration: none;  
+    display: inline-block;
+    margin-top: 20px;  
+}
+.boton-secundario:hover {
+    background-color: #e6d3a8; 
+}
 @media (max-width: 700px) {
     .cabecera {
         flex-direction: column;
