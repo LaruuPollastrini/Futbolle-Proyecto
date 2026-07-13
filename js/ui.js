@@ -30,11 +30,27 @@ function limpiarHijos(elemento) {
         elemento.removeChild(elemento.firstChild);
     }
 }
-function crearCeldaTexto(texto, clase) {
-    var celda;
+function ocultarImagenJugador() {
+    this.classList.add('oculto');
+}
+function crearImagenJugador(urlFoto, nombreJugador) {
+    var imagen;
+    imagen = document.createElement('img');
+    imagen.className = 'foto-jugador-intento';
+    imagen.alt = nombreJugador;
+    imagen.setAttribute('referrerpolicy', 'no-referrer');
+    imagen.onerror = ocultarImagenJugador;
+    imagen.src = urlFoto;
+    return imagen;
+}
+function crearCeldaNombre(intento) {
+    var celda, textoNombre;
     celda = document.createElement('span');
-    celda.className = 'celda-tablero ' + clase;
-    celda.textContent = texto;
+    celda.className = 'celda-tablero celda-nombre';
+    celda.appendChild(crearImagenJugador(intento.photo, intento.name));
+    textoNombre = document.createElement('span');
+    textoNombre.textContent = intento.name;
+    celda.appendChild(textoNombre);
     return celda;
 }
 function crearCeldaAtributo(texto, resultado) {
@@ -49,7 +65,7 @@ function crearFilaIntento(intento, comparacion) {
     var fila;
     fila = document.createElement('div');
     fila.className = 'fila-intento';
-    fila.appendChild(crearCeldaTexto(intento.name, 'celda-nombre'));
+    fila.appendChild(crearCeldaNombre(intento));
     fila.appendChild(crearCeldaAtributo(intento.nationality, comparacion.nacionalidad));
     fila.appendChild(crearCeldaAtributo(intento.club, comparacion.club));
     fila.appendChild(crearCeldaAtributo(intento.position, comparacion.posicion));

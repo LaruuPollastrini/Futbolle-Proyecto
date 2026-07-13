@@ -229,7 +229,14 @@ textarea {
     background-color: #757575;
 }
 .celda-nombre {
+    gap: 6px;
     background-color: #1b5e20;
+}
+.foto-jugador-intento {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    object-fit: cover;
 }
 .pista-verde {
     background-color: #2e7d32;
