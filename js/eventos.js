@@ -56,6 +56,9 @@ function manejarClickCerrarModal() {
 function manejarClickTema() {
     alternarTema();
 }
+function manejarClickSonido() {
+    alternarSonido();
+}
 function manejarClickHistorial() {
     mostrarModalHistorial();
 }
@@ -83,6 +86,7 @@ function inicializarEventos() {
     document.querySelector('.boton-reiniciar').addEventListener('click', manejarClickReiniciar);
     document.querySelector('.boton-cerrar-modal').addEventListener('click', manejarClickCerrarModal);
     document.querySelector('.boton-tema').addEventListener('click', manejarClickTema);
+    document.querySelector('.boton-sonido').addEventListener('click', manejarClickSonido);
     document.querySelector('.boton-historial').addEventListener('click', manejarClickHistorial);
     document.querySelector('.boton-cerrar-historial').addEventListener('click', manejarClickCerrarHistorial);
     document.querySelector('.boton-ordenar-fecha').addEventListener('click', manejarClickOrdenarFecha);
