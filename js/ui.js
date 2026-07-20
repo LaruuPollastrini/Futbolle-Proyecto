@@ -1,6 +1,56 @@
 'use strict';
 var CLAVE_HISTORIAL = 'futbolleHistorial';
 var ordenHistorialActual = 'fecha';
+var contextoAudioGlobal = null;
+var sonidoActivado = true;
+function obtenerContextoAudio() {
+    if (contextoAudioGlobal === null) {
+        contextoAudioGlobal = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    return contextoAudioGlobal;
+}
+function reproducirTono(frecuencia, duracionSegundos) {
+    var contexto, oscilador, ganancia;
+    if (!sonidoActivado) {
+        return;
+    }
+    contexto = obtenerContextoAudio();
+    oscilador = contexto.createOscillator();
+    ganancia = contexto.createGain();
+    oscilador.frequency.value = frecuencia;
+    oscilador.connect(ganancia);
+    ganancia.connect(contexto.destination);
+    ganancia.gain.setValueAtTime(0.2, contexto.currentTime);
+    ganancia.gain.exponentialRampToValueAtTime(0.001, contexto.currentTime + duracionSegundos);
+    oscilador.start();
+    oscilador.stop(contexto.currentTime + duracionSegundos);
+}
+function reproducirSonidoAcierto() {
+    reproducirTono(880, 0.15);
+}
+function reproducirSonidoVictoriaFinal() {
+    reproducirTono(990, 0.3);
+}
+function reproducirSonidoVictoria() {
+    reproducirTono(660, 0.15);
+    setTimeout(reproducirSonidoVictoriaFinal, 150);
+}
+function reproducirSonidoDerrota() {
+    reproducirTono(220, 0.5);
+}
+function huboAciertoEnComparacion(comparacion) {
+    return comparacion.nacionalidad === 'verde' || comparacion.club === 'verde' || comparacion.posicion === 'verde' || comparacion.edad === 'verde' || comparacion.overall === 'verde' || comparacion.altura === 'verde';
+}
+function alternarSonido() {
+    var boton;
+    boton = document.querySelector('.boton-sonido');
+    sonidoActivado = !sonidoActivado;
+    if (sonidoActivado) {
+        boton.textContent = 'Silenciar';
+        return;
+    }
+    boton.textContent = 'Activar sonido';
+}
 function actualizarContadorIntentos(cantidad) {
     document.querySelector('.contador-intentos').textContent = String(cantidad);
 }
