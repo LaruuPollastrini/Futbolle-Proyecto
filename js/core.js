@@ -103,6 +103,7 @@ function finalizarPartidaGanada() {
     puntaje = calcularPuntaje(intentosUsados, duracion);
     mostrarPuntaje(puntaje);
     guardarResultadoPartida('ganada', intentosUsados, duracion, puntaje);
+    reproducirSonidoVictoria();
     mostrarModal('¡Felicitaciones! Adivinaste a ' + jugadorSecreto.name + ' en ' + intentosUsados + ' intentos. Puntaje: ' + puntaje + '.');
 }
 function finalizarPartidaPerdida() {
@@ -112,6 +113,7 @@ function finalizarPartidaPerdida() {
     duracion = obtenerDuracionSegundos();
     mostrarPuntaje(0);
     guardarResultadoPartida('perdida', INTENTOS_MAXIMOS, duracion, 0);
+    reproducirSonidoDerrota();
     mostrarModal('Se acabaron los intentos. El jugador secreto era ' + jugadorSecreto.name + '.');
 }
 function procesarIntento(jugadorElegido) {
@@ -129,6 +131,9 @@ function procesarIntento(jugadorElegido) {
     }
     registrarNombreUsado(jugadorElegido.name);
     comparacion = compararJugadores(jugadorElegido, jugadorSecreto);
+    if (huboAciertoEnComparacion(comparacion)) {
+        reproducirSonidoAcierto();
+    }
     fila = crearFilaIntento(jugadorElegido, comparacion);
     agregarFilaAlTablero(fila);
     intentosRestantes = intentosRestantes - 1;
