@@ -42,7 +42,14 @@ futbolle/
 ## Funcionalidades extra implementadas
 
 - Modo claro / oscuro.
-- Historial de partidas jugadas guardado en LocalStorage (nombre del jugador, resultado, intentos, fecha y duración), con opción de ordenar por fecha o por cantidad de intentos.
+- Historial de partidas jugadas guardado en LocalStorage (nombre del jugador, resultado, dificultad, intentos, puntaje, fecha y duración), con opción de ordenar por fecha o por cantidad de intentos.
+- Selector de dificultad (Fácil, Medio, Difícil) que cambia el tipo de pista disponible:
+  - Fácil: foto del jugador secreto desenfocada, que se va revelando con cada intento fallido.
+  - Medio: se van revelando de a poco algunos atributos del jugador secreto (edad, altura, overall) a medida que se agotan los intentos.
+  - Difícil: sin pistas adicionales, solo el feedback de colores y flechas del tablero.
+- Sistema de puntaje al ganar la partida, calculado según la dificultad, la cantidad de intentos usados y el tiempo transcurrido.
+- Foto del jugador elegido en cada fila del tablero de intentos.
+- Sonido al acertar un atributo, al no acertar ninguno, y al ganar o perder la partida, con botón para silenciar.
 
 ## Deploy
 
