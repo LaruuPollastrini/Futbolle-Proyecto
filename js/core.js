@@ -133,6 +133,8 @@ function procesarIntento(jugadorElegido) {
     comparacion = compararJugadores(jugadorElegido, jugadorSecreto);
     if (huboAciertoEnComparacion(comparacion)) {
         reproducirSonidoAcierto();
+    }else{
+        reproducirSonidoSinAcierto();
     }
     fila = crearFilaIntento(jugadorElegido, comparacion);
     agregarFilaAlTablero(fila);

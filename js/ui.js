@@ -28,6 +28,9 @@ function reproducirTono(frecuencia, duracionSegundos) {
 function reproducirSonidoAcierto() {
     reproducirTono(880, 0.15);
 }
+function reproducirSonidoSinAcierto() {
+    reproducirTono(140, 0.12);
+}
 function reproducirSonidoVictoriaFinal() {
     reproducirTono(990, 0.3);
 }
